@@ -1,0 +1,32 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{SCRIPT_FILENAME} !-d  
+RewriteCond %{SCRIPT_FILENAME} !-f
+# url amigables
+RewriteRule ^views/home views/home.php
+RewriteRule ^index index.php
+RewriteRule ^views/register views/register.php
+RewriteRule ^views/tasks views/tasks.php
+RewriteRule ^views/forgotPassword views/forgotPassword.php
+RewriteRule ^querys/validateStudent querys/validateStudent.php
+RewriteRule ^views/register/([A-Za-z]+)$ views/register.php?registerSuccess=$1
+RewriteRule ^views/successfulRecord views/successfulRecord.php
+RewriteRule ^views/activateAccount views/activateAccount.php
+RewriteRule ^activationAccountTok activationAccountTok.php
+
+RewriteRule ^querys/validationLogin querys/validationLogin.php
+RewriteRule ^querys/closeSession querys/closeSession.php
+RewriteRule ^index/([A-Za-z]+)$ index.php?active=$1
+
+RewriteRule ^index/([A-Za-z]+)$ index.php?errorAccount=$1
+RewriteRule ^index/([A-Za-z]+)$ index.php?errorUser=$1
+
+RewriteRule ^index/([A-Za-z]+)$ index.php?expire=$1
+
+RewriteRule ^querys/recover_password querys/recover_password.php
+RewriteRule ^index/([A-Za-z]+)$ index.php?recoverSuccess=$1
+RewriteRule ^index/([A-Za-z]+)$ index.php?errorRecover=$1
+
+RewriteRule ^querys/change_password querys/change_password.php
+RewriteRule ^index/([A-Za-z]+)$ index.php?recovSuccess=$1
+RewriteRule ^index/([A-Za-z]+)$ index.php?recovError=$1
